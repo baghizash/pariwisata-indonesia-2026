@@ -1,0 +1,24 @@
+relationship 80fb8eb7-b54c-59ca-a898-bf3a7f972242
+	fromColumn: fact_wisman_bulanan.tahun
+	toColumn: dim_tahun.tahun
+	crossFilteringBehavior: oneDirection
+
+relationship 75f72550-0f08-57e6-9073-2fb41e3e73a9
+	fromColumn: fact_wisman_bulanan.bulan_ke
+	toColumn: dim_bulan.bulan_ke
+	crossFilteringBehavior: oneDirection
+
+relationship 7434cafb-0223-525f-90cb-2eb1c84ff886
+	fromColumn: fact_wisman_tahunan.tahun
+	toColumn: dim_tahun.tahun
+	crossFilteringBehavior: oneDirection
+
+relationship d43473f9-4d6c-5c0f-8ce1-764dd6bef18c
+	fromColumn: fact_tpk_provinsi.tahun
+	toColumn: dim_tahun.tahun
+	crossFilteringBehavior: oneDirection
+
+relationship 13254a2c-d281-5136-8154-63a208764ee1
+	fromColumn: fact_wisnus_tujuan.tahun
+	toColumn: dim_tahun.tahun
+	crossFilteringBehavior: oneDirection
