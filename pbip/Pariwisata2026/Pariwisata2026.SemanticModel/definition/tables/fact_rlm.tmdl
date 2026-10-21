@@ -1,0 +1,43 @@
+table fact_rlm
+	lineageTag: d6bd4ebd-2948-5f6e-aaf1-2aa418a6fce5
+
+	measure 'RLM Rata Rata' =
+			AVERAGE ( fact_rlm[rata_rata_lama_menginap_malam] )
+		formatString: 0.00
+		lineageTag: f0e480ce-3768-5f46-b749-07378fcf4cab
+
+	column periode
+		dataType: string
+		lineageTag: 83d71504-a28f-506f-ba4f-6db0e8cbf9fe
+		summarizeBy: none
+		sourceColumn: periode
+
+	column wilayah
+		dataType: string
+		lineageTag: 6621ba52-d32e-5e09-9ee4-3717abdec968
+		summarizeBy: none
+		sourceColumn: wilayah
+
+	column kelompok_tamu
+		dataType: string
+		lineageTag: b6efdaa3-74b2-5588-b308-584b485c4636
+		summarizeBy: none
+		sourceColumn: kelompok_tamu
+
+	column rata_rata_lama_menginap_malam
+		dataType: double
+		formatString: 0.00
+		lineageTag: d636fc6f-f73d-52bf-95a1-aca925ed6b5f
+		summarizeBy: none
+		sourceColumn: rata_rata_lama_menginap_malam
+
+	partition fact_rlm = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_rlm.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"periode", type text}, {"wilayah", type text}, {"kelompok_tamu", type text}, {"rata_rata_lama_menginap_malam", type number}})
+				in
+					ChangedType
+				```
