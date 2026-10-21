@@ -1,0 +1,18 @@
+model Model
+	culture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+ref table dim_bulan
+ref table dim_tahun
+ref table fact_wisman_bulanan
+ref table fact_wisman_tahunan
+ref table fact_wisman_pintu
+ref table fact_wisman_kebangsaan
+ref table fact_tpk_provinsi
+ref table fact_tpk_snapshot
+ref table fact_rlm
+ref table fact_wisnus_tujuan
+
+ref expression FolderData
