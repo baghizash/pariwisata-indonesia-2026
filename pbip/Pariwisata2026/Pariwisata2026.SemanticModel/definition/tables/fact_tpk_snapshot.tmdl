@@ -1,0 +1,32 @@
+table fact_tpk_snapshot
+	lineageTag: eeff260c-b67c-5699-9405-0d818e15a271
+
+	column provinsi
+		dataType: string
+		lineageTag: d2d3b4cb-3a56-59d1-8f0d-3d881eecfb2b
+		summarizeBy: none
+		sourceColumn: provinsi
+
+	column periode
+		dataType: string
+		lineageTag: 301d197b-3abc-55cc-901a-3bef341cf789
+		summarizeBy: none
+		sourceColumn: periode
+
+	column tpk_persen
+		dataType: double
+		formatString: 0.00
+		lineageTag: 6dfbe88f-4a3e-5682-81c8-3702e250a98f
+		summarizeBy: none
+		sourceColumn: tpk_persen
+
+	partition fact_tpk_snapshot = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_tpk_snapshot.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"provinsi", type text}, {"periode", type text}, {"tpk_persen", type number}})
+				in
+					ChangedType
+				```
