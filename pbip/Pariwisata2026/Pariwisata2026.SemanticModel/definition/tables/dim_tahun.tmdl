@@ -1,0 +1,26 @@
+table dim_tahun
+	lineageTag: d8c885e0-00b1-5952-ae0a-bf7c5338f856
+
+	column tahun
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f5830e6-3eb8-5b55-984c-3c39a14cce8f
+		summarizeBy: none
+		sourceColumn: tahun
+
+	column fase
+		dataType: string
+		lineageTag: 87cd8fcf-bf94-5039-812a-c27bf0382695
+		summarizeBy: none
+		sourceColumn: fase
+
+	partition dim_tahun = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\dim_tahun.csv"), [Delimiter = ",", Columns = 2, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"tahun", Int64.Type}, {"fase", type text}})
+				in
+					ChangedType
+				```
