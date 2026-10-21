@@ -1,0 +1,162 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "v05ColRLM",
+  "position": {
+    "x": 0,
+    "y": 392,
+    "z": 4,
+    "height": 300,
+    "width": 620,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_rlm"
+                    }
+                  },
+                  "Property": "kelompok_tamu"
+                }
+              },
+              "queryRef": "fact_rlm.kelompok_tamu",
+              "nativeQueryRef": "kelompok_tamu"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_rlm"
+                    }
+                  },
+                  "Property": "RLM Rata Rata"
+                }
+              },
+              "queryRef": "fact_rlm.RLM Rata Rata",
+              "nativeQueryRef": "RLM Rata Rata"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_rlm"
+                    }
+                  },
+                  "Property": "periode"
+                }
+              },
+              "queryRef": "fact_rlm.periode",
+              "nativeQueryRef": "periode"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rata-rata Lama Menginap Nasional (malam)'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "flt0000000000000b",
+        "ordinal": 11,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_rlm"
+              }
+            },
+            "Property": "wilayah"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "fr",
+              "Entity": "fact_rlm",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "fr"
+                          }
+                        },
+                        "Property": "wilayah"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Indonesia'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "isHiddenInViewMode": false,
+        "isLockedInViewMode": false
+      }
+    ]
+  }
+}
