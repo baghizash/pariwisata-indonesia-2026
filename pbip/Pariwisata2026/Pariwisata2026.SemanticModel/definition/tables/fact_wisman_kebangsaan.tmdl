@@ -1,0 +1,32 @@
+table fact_wisman_kebangsaan
+	lineageTag: 1bddf712-6da8-5b81-8a67-4e42489fbc61
+
+	column periode
+		dataType: string
+		lineageTag: 5aedef5a-33d8-5293-9778-1f2b938ecac2
+		summarizeBy: none
+		sourceColumn: periode
+
+	column kebangsaan
+		dataType: string
+		lineageTag: afc5397a-9e3d-5da3-ac2d-96951a20dc52
+		summarizeBy: none
+		sourceColumn: kebangsaan
+
+	column kunjungan
+		dataType: int64
+		formatString: #,##0
+		lineageTag: be5b7378-7177-5702-9d0b-72e5db8c7685
+		summarizeBy: none
+		sourceColumn: kunjungan
+
+	partition fact_wisman_kebangsaan = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_wisman_kebangsaan.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"periode", type text}, {"kebangsaan", type text}, {"kunjungan", Int64.Type}})
+				in
+					ChangedType
+				```
