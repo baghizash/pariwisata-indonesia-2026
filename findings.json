@@ -1,0 +1,161 @@
+{
+  "wisman_tahunan": {
+    "2019": 16106954,
+    "2020": 4052923,
+    "2021": 1557530,
+    "2022": 5889031,
+    "2023": 11677825,
+    "2024": 13886678,
+    "2025": 15386646,
+    "2026": 10578286
+  },
+  "pemulihan_vs_2019_persen": {
+    "2019": 100.0,
+    "2020": 25.2,
+    "2021": 9.7,
+    "2022": 36.6,
+    "2023": 72.5,
+    "2024": 86.2,
+    "2025": 95.5
+  },
+  "pertumbuhan_yoy_persen": {
+    "2020": -74.84,
+    "2021": -61.57,
+    "2022": 278.1,
+    "2023": 98.3,
+    "2024": 18.91,
+    "2025": 10.8
+  },
+  "penurunan_2021_vs_2019_persen": -90.3,
+  "ytd_2026_vs_2019_persen": 98.7,
+  "jan_agu_2019": 10713953,
+  "bulanan_2026": {
+    "Januari": 1188420,
+    "Februari": 1159690,
+    "Maret": 1088166,
+    "April": 1248651,
+    "Mei": 1382087,
+    "Juni": 1386575,
+    "Juli": 1525037,
+    "Agustus": 1599660
+  },
+  "puncak_2026": {
+    "bulan": "Agustus",
+    "kunjungan": 1599660
+  },
+  "lembah_2026": {
+    "bulan": "Maret",
+    "kunjungan": 1088166
+  },
+  "puncak_2023": {
+    "bulan": "Desember",
+    "kunjungan": 1144542
+  },
+  "indeks_musiman": {
+    "Januari": 85.8,
+    "Februari": 84.8,
+    "Maret": 93.5,
+    "April": 92.0,
+    "Mei": 95.5,
+    "Juni": 108.0,
+    "Juli": 112.3,
+    "Agustus": 115.2,
+    "September": 106.7,
+    "Oktober": 100.4,
+    "November": 95.6,
+    "Desember": 110.1
+  },
+  "pintu_2025": {
+    "Ngurah Rai (Bali)": {
+      "kunjungan": 6907585,
+      "pangsa_persen": 44.89
+    },
+    "Soekarno-Hatta (Banten)": {
+      "kunjungan": 2760838,
+      "pangsa_persen": 17.94
+    },
+    "Juanda (Jawa Timur)": {
+      "kunjungan": 329945,
+      "pangsa_persen": 2.14
+    },
+    "Kualanamu (Sumatera Utara)": {
+      "kunjungan": 289656,
+      "pangsa_persen": 1.88
+    },
+    "Batam (Kepulauan Riau)": {
+      "kunjungan": 1593757,
+      "pangsa_persen": 10.36
+    },
+    "Tanjung Uban (Kepulauan Riau)": {
+      "kunjungan": 253366,
+      "pangsa_persen": 1.65
+    }
+  },
+  "pangsa_ngurah_rai_2025": 44.9,
+  "pangsa_top2_2025": 62.8,
+  "pangsa_6_gerbang_2025": 78.9,
+  "pangsa_pintu_utama_2025": 87.4,
+  "kebangsaan_pemulihan_2023": {
+    "Malaysia": 63.8,
+    "Singapura": 73.1,
+    "Australia": 103.2,
+    "Tiongkok": 38.0,
+    "Timor Leste": 61.8,
+    "India": 92.3,
+    "Jepang": 48.5,
+    "Korea Selatan": 89.4,
+    "Filipina": 80.3
+  },
+  "pangsa_asean": {
+    "2019": 38.2,
+    "2023": 36.4,
+    "2025": 41.3
+  },
+  "kebangsaan_agu2026_pangsa": {
+    "Malaysia": 18.52,
+    "Australia": 10.75,
+    "Tiongkok": 10.16,
+    "Singapura": 8.23,
+    "Timor Leste": 5.46,
+    "India": 3.26,
+    "Jepang": 3.11,
+    "Korea Selatan": 3.09,
+    "Total ASEAN": 39.03
+  },
+  "tpk_nasional": {
+    "2023": 51.27,
+    "2024": 52.57,
+    "2025": 49.3
+  },
+  "tpk_2025_tertinggi": {
+    "provinsi": "Bali",
+    "nilai": 61.02
+  },
+  "tpk_2025_terendah": {
+    "provinsi": "Aceh",
+    "nilai": 25.01
+  },
+  "tpk_bali_2025": 61.02,
+  "tpk_des2025_tertinggi": {
+    "provinsi": "DI Yogyakarta",
+    "nilai": 66.38
+  },
+  "wisnus_total_2025": 1200332559,
+  "wisnus_total_2024": 1021084031,
+  "wisnus_pertumbuhan_2025_persen": 17.55,
+  "rasio_wisnus_wisman_2025": 78.0,
+  "wisnus_top5_2025": {
+    "Jawa Timur": 217197652,
+    "Jawa Barat": 211762921,
+    "Jawa Tengah": 146253837,
+    "DKI Jakarta": 99396992,
+    "Banten": 62556582
+  },
+  "pangsa_jawa_wisnus_2025": 64.8,
+  "wisnus_bali_2025": 26615306,
+  "rlm_des2025": {
+    "Asing": 2.65,
+    "Indonesia": 1.46,
+    "Total": 1.58
+  }
+}
