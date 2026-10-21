@@ -1,0 +1,53 @@
+table fact_wisnus_tujuan
+	lineageTag: 70de1866-0e42-54ce-bcdc-0c2a12134567
+
+	measure 'Total Perjalanan Wisnus' =
+			SUM ( fact_wisnus_tujuan[perjalanan] )
+		formatString: #,##0
+		lineageTag: 1586e781-fc9e-50d7-be54-d447070560af
+
+	measure 'Wisnus 2024' =
+			CALCULATE ( [Total Perjalanan Wisnus], fact_wisnus_tujuan[tahun] = 2024 )
+		formatString: #,##0
+		lineageTag: 180fa399-dd6b-5534-b840-7235d16df656
+
+	measure 'Wisnus 2025' =
+			CALCULATE ( [Total Perjalanan Wisnus], fact_wisnus_tujuan[tahun] = 2025 )
+		formatString: #,##0
+		lineageTag: 209116f8-2f0a-5b53-87ab-9fe8dd82b8c7
+
+	measure 'Pertumbuhan Wisnus Persen' =
+			DIVIDE ( [Wisnus 2025] - [Wisnus 2024], [Wisnus 2024] )
+		formatString: 0.00%
+		lineageTag: b325e550-c20d-5822-8905-7ae2f55a61db
+
+	column provinsi
+		dataType: string
+		lineageTag: 812a04e3-d592-5ee1-a8d5-2418fbb36c43
+		summarizeBy: none
+		sourceColumn: provinsi
+
+	column tahun
+		dataType: int64
+		formatString: 0
+		lineageTag: 6189ab89-c32e-587a-83cb-58145046770d
+		summarizeBy: none
+		sourceColumn: tahun
+
+	column perjalanan
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 84d7e31e-d1f5-5b4e-8d87-6864530e5375
+		summarizeBy: none
+		sourceColumn: perjalanan
+
+	partition fact_wisnus_tujuan = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_wisnus_tujuan.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"provinsi", type text}, {"tahun", Int64.Type}, {"perjalanan", Int64.Type}})
+				in
+					ChangedType
+				```
