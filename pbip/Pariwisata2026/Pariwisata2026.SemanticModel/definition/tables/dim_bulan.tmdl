@@ -1,0 +1,34 @@
+table dim_bulan
+	lineageTag: 120bc1d0-1227-57b4-8d86-807759be1c45
+
+	column bulan_ke
+		dataType: int64
+		formatString: 0
+		lineageTag: 93bf1cfd-7f4f-5d65-8a01-555586164840
+		summarizeBy: none
+		sourceColumn: bulan_ke
+
+	column bulan
+		dataType: string
+		lineageTag: d8051d2e-380e-5881-adb5-888687e0219d
+		sortByColumn: bulan_ke
+		summarizeBy: none
+		sourceColumn: bulan
+
+	column bulan_singkat
+		dataType: string
+		lineageTag: 97ba45ab-965a-5953-97f6-06677b4fbe79
+		sortByColumn: bulan_ke
+		summarizeBy: none
+		sourceColumn: bulan_singkat
+
+	partition dim_bulan = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\dim_bulan.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"bulan_ke", Int64.Type}, {"bulan", type text}, {"bulan_singkat", type text}})
+				in
+					ChangedType
+				```
