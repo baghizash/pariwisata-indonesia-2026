@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "v04BarSnap",
+  "position": {
+    "x": 640,
+    "y": 76,
+    "z": 3,
+    "height": 300,
+    "width": 620,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_tpk_snapshot"
+                    }
+                  },
+                  "Property": "provinsi"
+                }
+              },
+              "queryRef": "fact_tpk_snapshot.provinsi",
+              "nativeQueryRef": "provinsi"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_tpk_snapshot"
+                    }
+                  },
+                  "Function": 0,
+                  "Property": "tpk_persen"
+                }
+              },
+              "queryRef": "fact_tpk_snapshot.tpk_persen",
+              "nativeQueryRef": "Sum of tpk_persen"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_tpk_snapshot"
+                  }
+                },
+                "Function": 0,
+                "Property": "tpk_persen"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'TPK Bintang Snapshot Desember 2025'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
