@@ -1,0 +1,52 @@
+table fact_wisman_pintu
+	lineageTag: 727da392-eef6-5a2f-adae-5bf9f16a7da8
+
+	measure 'Total Kunjungan Pintu' =
+			SUM ( fact_wisman_pintu[kunjungan] )
+		formatString: #,##0
+		lineageTag: e77b534d-581e-548a-a8b2-1dee944549ae
+
+	measure 'Pangsa Pintu Masuk' = ```
+			DIVIDE (
+			    [Total Kunjungan Pintu],
+			    CALCULATE ( [Total Kunjungan Pintu], ALL ( fact_wisman_pintu[pintu_masuk] ) )
+			)
+			```
+		formatString: 0.0%
+		lineageTag: bcce6a80-07b1-5894-a989-c6c85ea1a73b
+
+	column periode
+		dataType: string
+		lineageTag: b2c2856f-faea-5081-b82a-83d53f61b760
+		summarizeBy: none
+		sourceColumn: periode
+
+	column pintu_masuk
+		dataType: string
+		lineageTag: 91d27d40-96d8-5131-8c83-656c6bbccb67
+		summarizeBy: none
+		sourceColumn: pintu_masuk
+
+	column moda
+		dataType: string
+		lineageTag: 7314a568-7aab-58c9-aa01-397384a7ad17
+		summarizeBy: none
+		sourceColumn: moda
+
+	column kunjungan
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 195d6bb5-7a2b-5d62-9b6e-8cb52d7e70e3
+		summarizeBy: none
+		sourceColumn: kunjungan
+
+	partition fact_wisman_pintu = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_wisman_pintu.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"periode", type text}, {"pintu_masuk", type text}, {"moda", type text}, {"kunjungan", Int64.Type}})
+				in
+					ChangedType
+				```
