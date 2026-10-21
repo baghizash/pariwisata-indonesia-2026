@@ -1,0 +1,45 @@
+table fact_wisman_bulanan
+	lineageTag: ca48cd68-d5e1-5903-bc92-cb4aa1d75633
+
+	measure 'Total Kunjungan Wisman' =
+			SUM ( fact_wisman_bulanan[kunjungan_wisman] )
+		formatString: #,##0
+		lineageTag: de8e47c3-8988-5209-8d27-0614ae6da94e
+
+	column tahun
+		dataType: int64
+		formatString: 0
+		lineageTag: 61eb35f4-8188-5a46-a4f7-55e09e643618
+		summarizeBy: none
+		sourceColumn: tahun
+
+	column bulan_ke
+		dataType: int64
+		formatString: 0
+		lineageTag: d224e1c0-abb7-54f1-84be-09f3c50f1abc
+		summarizeBy: none
+		sourceColumn: bulan_ke
+
+	column bulan
+		dataType: string
+		lineageTag: bd7612ea-98a2-5640-8772-2d54fe17b36f
+		summarizeBy: none
+		sourceColumn: bulan
+
+	column kunjungan_wisman
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 415ef55c-2974-50bd-a8b3-2860105b2500
+		summarizeBy: none
+		sourceColumn: kunjungan_wisman
+
+	partition fact_wisman_bulanan = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_wisman_bulanan.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"tahun", Int64.Type}, {"bulan_ke", Int64.Type}, {"bulan", type text}, {"kunjungan_wisman", Int64.Type}})
+				in
+					ChangedType
+				```
