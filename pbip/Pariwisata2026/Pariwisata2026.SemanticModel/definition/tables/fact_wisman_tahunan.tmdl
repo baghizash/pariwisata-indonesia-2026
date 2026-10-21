@@ -1,0 +1,62 @@
+table fact_wisman_tahunan
+	lineageTag: 998bba1d-3e9d-5506-80a8-ddeda115f8cf
+
+	measure 'Total Kunjungan Tahunan' =
+			SUM ( fact_wisman_tahunan[kunjungan_wisman] )
+		formatString: #,##0
+		lineageTag: c85c900e-ea91-5a15-960c-499b408bcab6
+
+	measure 'Kunjungan Wisman 2019' =
+			CALCULATE ( [Total Kunjungan Tahunan], fact_wisman_tahunan[tahun] = 2019 )
+		formatString: #,##0
+		lineageTag: 96f61dfe-cf7d-5bc6-8657-d0f2adcf63eb
+
+	measure 'Kunjungan Wisman 2025' =
+			CALCULATE ( [Total Kunjungan Tahunan], fact_wisman_tahunan[tahun] = 2025 )
+		formatString: #,##0
+		lineageTag: 4e48b959-6489-52c4-a711-d60450d75431
+
+	measure 'Tingkat Pemulihan vs 2019' =
+			DIVIDE ( [Total Kunjungan Tahunan], [Kunjungan Wisman 2019] )
+		formatString: 0.0%
+		lineageTag: f9fd008f-7a50-599d-8cab-b814aa6908f7
+
+	measure 'Kunjungan Wisman YTD 2026' = ```
+			CALCULATE (
+			    SUM ( fact_wisman_tahunan[kunjungan_wisman] ),
+			    fact_wisman_tahunan[tahun] = 2026
+			)
+			```
+		formatString: #,##0
+		lineageTag: e905bb6e-7b43-5731-b250-dcf1163a990f
+
+	column tahun
+		dataType: int64
+		formatString: 0
+		lineageTag: 5dc6c519-eed7-5572-81d8-9638afb82737
+		summarizeBy: none
+		sourceColumn: tahun
+
+	column kunjungan_wisman
+		dataType: int64
+		formatString: #,##0
+		lineageTag: ea29c55d-14d9-5882-a0ee-89fe9febc76c
+		summarizeBy: none
+		sourceColumn: kunjungan_wisman
+
+	column status_periode
+		dataType: string
+		lineageTag: 98b67a36-c9de-56ef-8f31-b61a1a58c7d8
+		summarizeBy: none
+		sourceColumn: status_periode
+
+	partition fact_wisman_tahunan = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_wisman_tahunan.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"tahun", Int64.Type}, {"kunjungan_wisman", Int64.Type}, {"status_periode", type text}})
+				in
+					ChangedType
+				```
