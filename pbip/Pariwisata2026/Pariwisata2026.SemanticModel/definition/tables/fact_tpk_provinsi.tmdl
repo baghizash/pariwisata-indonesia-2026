@@ -1,0 +1,38 @@
+table fact_tpk_provinsi
+	lineageTag: 38dec26f-9db5-5d21-9fc1-3dc6dde3272b
+
+	measure 'Rata Rata TPK Provinsi' =
+			AVERAGE ( fact_tpk_provinsi[tpk_persen] )
+		formatString: 0.00
+		lineageTag: 550270b4-b84b-5c35-9e55-d0a8466f0124
+
+	column provinsi
+		dataType: string
+		lineageTag: 278ca365-50cd-5b3a-95b0-cc4f525d3670
+		summarizeBy: none
+		sourceColumn: provinsi
+
+	column tahun
+		dataType: int64
+		formatString: 0
+		lineageTag: 3246d461-9ef9-5f58-b47c-3178566e0e7b
+		summarizeBy: none
+		sourceColumn: tahun
+
+	column tpk_persen
+		dataType: double
+		formatString: 0.00
+		lineageTag: 39dbfbb2-1b2a-5439-8c52-c93f3be19bec
+		summarizeBy: none
+		sourceColumn: tpk_persen
+
+	partition fact_tpk_provinsi = m
+		mode: import
+		source = ```
+				let
+					Source = Csv.Document(File.Contents(FolderData & "\fact_tpk_provinsi.csv"), [Delimiter = ",", Columns = 3, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"provinsi", type text}, {"tahun", Int64.Type}, {"tpk_persen", type number}})
+				in
+					ChangedType
+				```
