@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "v03BarPintu",
+  "position": {
+    "x": 0,
+    "y": 76,
+    "z": 2,
+    "height": 300,
+    "width": 620,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_wisman_pintu"
+                    }
+                  },
+                  "Property": "pintu_masuk"
+                }
+              },
+              "queryRef": "fact_wisman_pintu.pintu_masuk",
+              "nativeQueryRef": "pintu_masuk"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_wisman_pintu"
+                    }
+                  },
+                  "Property": "Total Kunjungan Pintu"
+                }
+              },
+              "queryRef": "fact_wisman_pintu.Total Kunjungan Pintu",
+              "nativeQueryRef": "Total Kunjungan Pintu"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_wisman_pintu"
+                  }
+                },
+                "Property": "Total Kunjungan Pintu"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Kunjungan per Gerbang (atur lewat slicer periode)'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
