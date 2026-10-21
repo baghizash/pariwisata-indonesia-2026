@@ -1,0 +1,126 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "v08Table",
+  "position": {
+    "x": 0,
+    "y": 456,
+    "z": 7,
+    "height": 250,
+    "width": 1260,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_wisnus_tujuan"
+                    }
+                  },
+                  "Property": "provinsi"
+                }
+              },
+              "queryRef": "fact_wisnus_tujuan.provinsi",
+              "nativeQueryRef": "provinsi"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_wisnus_tujuan"
+                    }
+                  },
+                  "Property": "Wisnus 2024"
+                }
+              },
+              "queryRef": "fact_wisnus_tujuan.Wisnus 2024",
+              "nativeQueryRef": "Wisnus 2024"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_wisnus_tujuan"
+                    }
+                  },
+                  "Property": "Wisnus 2025"
+                }
+              },
+              "queryRef": "fact_wisnus_tujuan.Wisnus 2025",
+              "nativeQueryRef": "Wisnus 2025"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_wisnus_tujuan"
+                    }
+                  },
+                  "Property": "Pertumbuhan Wisnus Persen"
+                }
+              },
+              "queryRef": "fact_wisnus_tujuan.Pertumbuhan Wisnus Persen",
+              "nativeQueryRef": "Pertumbuhan Wisnus Persen"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_wisnus_tujuan"
+                  }
+                },
+                "Property": "Wisnus 2025"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Wisnus per Provinsi: 2024, 2025, dan Pertumbuhannya'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
