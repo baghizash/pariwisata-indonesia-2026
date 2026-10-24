@@ -18,6 +18,10 @@ sama-sama diterbitkan BPS) ditandai eksplisit sebagai "turunan" beserta cara hit
 | 7 | BRS Perkembangan Pariwisata Juni 2026 | No. 73/08/Th. XXIX, 3 Agustus 2026 | Wisman Mei 2026 = 1.382.087, Jun 2026 = 1.386.575, kumulatif Jan–Jun 2026 = 7.453.589; Jun 2025 = 1.417.096; kumulatif Jan–Jun 2025 = 7.051.310 |
 | 8 | BRS Perkembangan Pariwisata Agustus 2026 | No. 98/10/Th. XXIX, 1 Oktober 2026 | Wisman Jul 2026 = 1.525.037, Agu 2026 = 1.599.660, kumulatif Jan–Agu 2026 = 10.578.286; Agu 2025 = 1.505.220; kumulatif Jan–Agu 2025 = 10.037.876; pintu masuk Agu 2026 & kumulatif; kebangsaan Agu 2026; TPK bintang Agu 2026 = 52,52%; RLM Agu 2026; wisnus Agu 2026 = 104,30 juta, kumulatif Jan–Agu 2026 = 842,15 juta |
 | 9 | Rilis BPS Maret 2026 (konferensi pers) | 4 Mei 2026 | Wisman Mar 2025 = 984.769 (basis y-on-y Mar 2026 +10,50%), wisnus Mar 2026 = 126,34 juta |
+| 10 | Statistik Kunjungan Wisatawan Mancanegara 2025 (*International Visitor Arrivals Statistics 2025*) | Publikasi tahunan BPS, Volume 17, 2026; Katalog 8401011; No. Publikasi 06300.26004 | **Wisman Jan 2025 = 1.156.012 dan Feb 2025 = 1.022.894 secara eksak** (Lampiran 1, 4, 7 & 8); verifikasi silang total tahunan 2025 = 15.386.646 |
+| 11 | BRS Perkembangan Pariwisata Mei 2025 | No. 58/07/Th. XXVIII, 1 Juli 2025 | **Wisman Mei 2025 = 1.306.000 secara eksak** (Tabel 1, Grand Total); kumulatif Jan–Mei 2025 = 5.634.214 |
+| 12 | BRS Perkembangan Pariwisata Juli 2025 | No. 78/09/Th. XXVIII, 1 September 2025 | **Wisman Jul 2025 = 1.481.346 secara eksak** (Tabel 1, Total I+II = 1.303.732 pintu utama + 177.614 perbatasan) |
+| 13 | BRS Perkembangan Pariwisata Maret 2026 | No. 43/05/Th. XXIX, 4 Mei 2026 | Kumulatif Jan–Mar 2026 = 3.436.276 (Tabel 1) sehingga **Jan 2026 = 1.188.420 terkonfirmasi eksak** setelah dikurangi Feb & Mar 2026; kumulatif Jan–Mar 2025 = 3.163.675 pada tabel yang sama mengonfirmasi Jan+Feb+Mar 2025 |
 
 URL induk: https://www.bps.go.id (menu Produk → Berita Resmi Statistik → Pariwisata;
 publikasi tahunan pada menu Publikasi). Berkas PDF BRS diunduh dari server unduhan BPS
@@ -35,9 +39,26 @@ publikasi tahunan pada menu Publikasi). Berkas PDF BRS diunduh dari server unduh
   (Sep & Okt tidak dapat dipisahkan secara eksak dari publikasi yang tersedia sehingga
   dikecualikan). 2026: lengkap Jan–Agu melalui rantai Tabel 1 antar-BRS; jumlah kedelapan
   bulan ini persis sama dengan kumulatif resmi 10.578.286.
-- **Angka turunan (ditandai pada kolom `sumber_catatan` di CSV):**
-  Jan 2026 (kumulatif Jan–Feb dikurangi Feb; terverifikasi silang dari perubahan m-to-m
-  Feb 2026 sebesar −2,42%), Jan & Feb 2025, Mei & Jul 2025 (residual antar kumulatif resmi).
+- **Angka turunan: TIDAK ADA LAGI pada `wisman_bulanan.csv`** (per 24 Oktober 2026).
+  Kelima nilai yang semula ditandai "turunan" sudah diganti/dikonfirmasi dengan angka
+  eksak BPS: Jan 2025 = 1.156.012 dan Feb 2025 = 1.022.894 (publikasi tahunan BPS
+  2025, Lampiran 1, 4, 7 & 8 — koreksi +34 dan −34 dari nilai turunan lama; nilai
+  turunan Feb lama berasal dari persentase y-on-y yang dibulatkan sehingga meleset
+  34 kunjungan, dan Jan lama mewarisi kesalahan yang sama dari residual kumulatif);
+  Mei 2025 = 1.306.000 (BRS Mei 2025, Tabel 1 — sama persis dengan turunan);
+  Jul 2025 = 1.481.346 (BRS Jul 2025, Tabel 1 — sama persis dengan turunan);
+  Jan 2026 = 1.188.420 (terkonfirmasi eksak dari kumulatif Jan–Mar 2026 BRS Mar 2026,
+  Tabel 1, dan tercantum langsung pada tabel bulanan Kemenpar berbasis data BPS —
+  sama persis dengan turunan). Edisi BRS Jan–Feb 2025 (No. 29/04) memang hanya
+  memuat TPK/RLM dan BRS Mar 2025 hanya memuat pintu masuk utama, sehingga total
+  Jan–Feb 2025 (termasuk perbatasan) baru terbit utuh pada publikasi tahunan.
+  Semua kumulatif hasil penjumlahan seri bulanan cocok persis dengan kumulatif
+  resmi: Jan–Mar 2025 = 3.163.675; Jan–Apr 2025 = 4.328.214; Jan–Mei 2025 =
+  5.634.214; Jan–Jun 2025 = 7.051.310; Jan–Agu 2025 = 10.037.876; Jan–Mar 2026 =
+  3.436.276; Jan–Apr 2026 = 4.684.927; Jan–Agu 2026 = 10.578.286. Total tahunan
+  TIDAK berubah: 2025 = 15.386.646. (Catatan vintage: kumulatif Jan–Jul 2025 pada
+  BRS Jul 2025 = 8.531.525 memakai Jun 2025 = 1.415.965; Jun kemudian direvisi
+  menjadi 1.417.096 — selisih 1.131 — pada BRS Jun 2026 dan publikasi tahunan.)
 - **Pintu masuk:** 6 gerbang utama (Ngurah Rai, Soekarno-Hatta, Juanda, Kualanamu, Batam,
   Tanjung Uban) untuk 2019, 2023, 2024, 2025, kumulatif Jan–Agu 2026, dan bulan Agu 2026.
 - **Kebangsaan:** tahunan 2019 & 2023 (Lampiran 4); bulanan Des 2025 dan Agu 2026 (Tabel 2
@@ -54,7 +75,10 @@ publikasi tahunan pada menu Publikasi). Berkas PDF BRS diunduh dari server unduh
 ## Yang dikecualikan (tidak ditemukan pada publikasi BPS yang diakses)
 
 - Rincian moda angkutan pintu masuk tahun 2025 (hanya total pintu utama & perbatasan).
-- Wisman bulanan Jan–Okt 2024 dan Sep–Okt 2025 secara eksak per bulan.
+- Wisman bulanan Jan–Okt 2024 secara eksak per bulan. (Sep–Okt 2025 kini sebenarnya
+  tersedia eksak pada Lampiran 1 & 4 publikasi tahunan BPS 2025 — Sep = 1.394.910,
+  Okt = 1.348.993 — tetapi belum ditambahkan pada revisi 24 Okt 2026 karena di luar
+  cakupan penggantian nilai turunan; menunggu keputusan.)
 - Jumlah kunjungan tahunan 2025 per kebangsaan (BPS hanya mempublikasikan pangsa).
 - Devisa pariwisata dan rata-rata pengeluaran wisman per kunjungan tidak dimasukkan ke
   seri utama (hanya disebut sepintas pada narasi rilis; tidak dikompilasi ke CSV).
