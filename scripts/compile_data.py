@@ -58,22 +58,22 @@ BULANAN_PUBLIKASI = {
 }
 # BRS Des 2024 (Tabel 1): hanya Nov & Des 2024 yang diambil eksak dari tabel
 BULANAN_2024 = {11: 1092067, 12: 1244372}
-# 2025: Tabel 1 antar-BRS + residual kumulatif BPS (ditandai)
+# 2025: Tabel 1 antar-BRS + publikasi tahunan BPS (semua eksak sejak verifikasi 2026-10-24)
 BULANAN_2025 = {
-    1: (1155978, "Turunan: kumulatif Jan-Apr 2025 (BRS Apr 2026) dikurangi Feb-Apr; konsisten dengan narasi BRS 1,16 juta"),
-    2: (1022928, "Turunan: Feb 2026 1.159.690 dibagi (1 + 13,37%) dari rilis BPS Feb 2026; konsisten dengan narasi BRS 1,02 juta"),
+    1: (1156012, "Statistik Kunjungan Wisman 2025 (Vol. 17, 2026), Lampiran 1, 4, 7 & 8; cocok dengan kumulatif Jan-Mar 2025 BRS Mar 2026, Tabel 1"),
+    2: (1022894, "Statistik Kunjungan Wisman 2025 (Vol. 17, 2026), Lampiran 1, 4, 7 & 8; cocok dengan kumulatif Jan-Mar 2025 BRS Mar 2026, Tabel 1"),
     3: (984769, "Rilis BPS Mar 2026 (dikutip Kemenpar)"),
     4: (1164539, "BRS Apr 2026, Tabel 1 (kolom bulan yang sama tahun sebelumnya)"),
-    5: (1306000, "Turunan: kumulatif Jan-Jun 2025 (BRS Jun 2026) dikurangi Jan-Apr dan Jun 2025"),
+    5: (1306000, "BRS Mei 2025 (No. 58/07/Th. XXVIII, 1 Jul 2025), Tabel 1 (Grand Total); kumulatif Jan-Mei 5.634.214 cocok"),
     6: (1417096, "BRS Jun 2026, Tabel 1 (kolom bulan yang sama tahun sebelumnya)"),
-    7: (1481346, "Turunan: kumulatif Jan-Agu 2025 (BRS Agu 2026) dikurangi Jan-Jun dan Agu 2025"),
+    7: (1481346, "BRS Jul 2025 (No. 78/09/Th. XXVIII, 1 Sep 2025), Tabel 1 (Total I+II)"),
     8: (1505220, "BRS Agu 2026, Tabel 1 (kolom bulan yang sama tahun sebelumnya)"),
     11: (1199007, "BRS Des 2025, Tabel 1"),
     12: (1405860, "BRS Des 2025, Tabel 1"),
 }
-# 2026: rantai Tabel 1 antar-BRS (semua eksak; Jan turunan terverifikasi silang)
+# 2026: rantai Tabel 1 antar-BRS (semua eksak; Jan terkonfirmasi eksak 2026-10-24)
 BULANAN_2026 = {
-    1: (1188420, "Turunan: kumulatif Jan-Feb 2026 (BRS) dikurangi Feb 2026; terverifikasi dari perubahan m-to-m Feb -2,42%"),
+    1: (1188420, "Eksak: kumulatif Jan-Mar 2026 (BRS Mar 2026 No. 43/05, Tabel 1) dikurangi Feb & Mar 2026; tercantum langsung pada Tabel Kemenpar Perkembangan Kunjungan Wisman 2026 vs 2025; kumulatif Jan-Apr cocok dengan BRS Apr 2026"),
     2: (1159690, "Rilis BPS Feb 2026 (1 Apr 2026)"),
     3: (1088166, "BRS Apr 2026, Tabel 1 (kolom bulan sebelumnya)"),
     4: (1248651, "BRS Apr 2026, Tabel 1"),
