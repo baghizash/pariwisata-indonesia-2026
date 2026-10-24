@@ -107,9 +107,10 @@ Kit lengkap tersedia di folder [`powerbi/`](powerbi/):
 
 - Angka tahunan memakai **vintage terbaru** yang diterbitkan BPS; perbedaan
   vintage dicatat di SOURCES.md.
-- Beberapa nilai bulanan adalah **turunan aritmetika antar kumulatif resmi**
-  BPS (ditandai pada kolom `sumber_catatan` CSV) dan terverifikasi silang
-  dengan perubahan persentase yang diterbitkan BPS.
+- Nilai bulanan wisman yang semula turunan aritmetika antar kumulatif sudah
+  diganti/dikonfirmasi dengan angka eksak BPS per 24 Oktober 2026 (Jan & Feb
+  2025 terkoreksi ±34 kunjungan; tiga nilai lain sama persis). Total tahunan
+  tidak berubah. Rincian per bulan ada di `data/SOURCES.md`.
 - Seri yang tidak dapat diverifikasi dari publikasi BPS **dikecualikan**,
   bukan diestimasi.
 
