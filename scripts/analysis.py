@@ -230,7 +230,7 @@ d25 = bulanan[bulanan.tahun == 2025].sort_values("bulan_ke")
 ax.bar(d26.bulan_ke - 0.2, d26.kunjungan_wisman / 1e6, width=0.4, color=MARINE,
        label="2026", zorder=3)
 ax.bar(d25.bulan_ke + 0.2, d25.kunjungan_wisman / 1e6, width=0.4, color=GREY,
-       label="2025 (bulan tersedia)", zorder=3)
+       label="2025", zorder=3)
 ax.set_xticks(range(1, 13))
 ax.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu",
                     "Sep", "Okt", "Nov", "Des"])
