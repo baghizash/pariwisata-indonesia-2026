@@ -110,7 +110,10 @@ Kit lengkap tersedia di folder [`powerbi/`](powerbi/):
 - Nilai bulanan wisman yang semula turunan aritmetika antar kumulatif sudah
   diganti/dikonfirmasi dengan angka eksak BPS per 24 Oktober 2026 (Jan & Feb
   2025 terkoreksi ±34 kunjungan; tiga nilai lain sama persis). Total tahunan
-  tidak berubah. Rincian per bulan ada di `data/SOURCES.md`.
+  tidak berubah. Seri bulanan 2025 kini lengkap 12 bulan: Sep & Okt 2025
+  dilengkapi 25 Oktober 2026 dari publikasi tahunan BPS 2025, dan jumlah
+  ke-12 bulannya persis sama dengan total tahunan resmi 15.386.646.
+  Rincian per bulan ada di `data/SOURCES.md`.
 - Seri yang tidak dapat diverifikasi dari publikasi BPS **dikecualikan**,
   bukan diestimasi.
 
