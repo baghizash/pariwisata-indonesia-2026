@@ -68,6 +68,8 @@ BULANAN_2025 = {
     6: (1417096, "BRS Jun 2026, Tabel 1 (kolom bulan yang sama tahun sebelumnya)"),
     7: (1481346, "BRS Jul 2025 (No. 78/09/Th. XXVIII, 1 Sep 2025), Tabel 1 (Total I+II)"),
     8: (1505220, "BRS Agu 2026, Tabel 1 (kolom bulan yang sama tahun sebelumnya)"),
+    9: (1394910, "Statistik Kunjungan Wisman 2025 (Vol. 17, 2026), Lampiran 1 & 4; dilengkapi 25 Okt 2026 — jumlah 12 bulan 2025 persis 15.386.646"),
+    10: (1348993, "Statistik Kunjungan Wisman 2025 (Vol. 17, 2026), Lampiran 1 & 4; dilengkapi 25 Okt 2026 — jumlah 12 bulan 2025 persis 15.386.646"),
     11: (1199007, "BRS Des 2025, Tabel 1"),
     12: (1405860, "BRS Des 2025, Tabel 1"),
 }
