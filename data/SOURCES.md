@@ -35,9 +35,10 @@ publikasi tahunan pada menu Publikasi). Berkas PDF BRS diunduh dari server unduh
   adalah 13.902.420. Rincian moda pintu masuk 2024 (pada `wisman_moda_pintu.csv`) berasal
   dari vintage BRS Des 2024 sehingga jumlahnya mengikuti total awal 13.902.420 (selisih 0,11%).
 - **Wisman bulanan:** lengkap 2019–2023 (60 bulan, Lampiran 1). 2024: hanya Nov & Des yang
-  diambil eksak dari Tabel 1 BRS; bulan lain 2024 tidak dikompilasi. 2025: 10 dari 12 bulan
-  (Sep & Okt tidak dapat dipisahkan secara eksak dari publikasi yang tersedia sehingga
-  dikecualikan). 2026: lengkap Jan–Agu melalui rantai Tabel 1 antar-BRS; jumlah kedelapan
+  diambil eksak dari Tabel 1 BRS; bulan lain 2024 tidak dikompilasi. 2025: lengkap 12 bulan
+  (Sep & Okt dilengkapi 25 Oktober 2026 dari Lampiran 1 & 4 publikasi tahunan BPS 2025 —
+  Sep = 1.394.910, Okt = 1.348.993 — dan jumlah ke-12 bulan persis sama dengan total
+  tahunan resmi 15.386.646). 2026: lengkap Jan–Agu melalui rantai Tabel 1 antar-BRS; jumlah kedelapan
   bulan ini persis sama dengan kumulatif resmi 10.578.286.
 - **Angka turunan: TIDAK ADA LAGI pada `wisman_bulanan.csv`** (per 24 Oktober 2026).
   Kelima nilai yang semula ditandai "turunan" sudah diganti/dikonfirmasi dengan angka
@@ -75,10 +76,9 @@ publikasi tahunan pada menu Publikasi). Berkas PDF BRS diunduh dari server unduh
 ## Yang dikecualikan (tidak ditemukan pada publikasi BPS yang diakses)
 
 - Rincian moda angkutan pintu masuk tahun 2025 (hanya total pintu utama & perbatasan).
-- Wisman bulanan Jan–Okt 2024 secara eksak per bulan. (Sep–Okt 2025 kini sebenarnya
-  tersedia eksak pada Lampiran 1 & 4 publikasi tahunan BPS 2025 — Sep = 1.394.910,
-  Okt = 1.348.993 — tetapi belum ditambahkan pada revisi 24 Okt 2026 karena di luar
-  cakupan penggantian nilai turunan; menunggu keputusan.)
+- Wisman bulanan Jan–Okt 2024 secara eksak per bulan. (Sep–Okt 2025 yang semula
+  tercatat di sini sebagai tersedia-tetapi-belum-ditambahkan sudah dimasukkan ke
+  `wisman_bulanan.csv` pada 25 Oktober 2026; lihat bagian Cakupan di atas.)
 - Jumlah kunjungan tahunan 2025 per kebangsaan (BPS hanya mempublikasikan pangsa).
 - Devisa pariwisata dan rata-rata pengeluaran wisman per kunjungan tidak dimasukkan ke
   seri utama (hanya disebut sepintas pada narasi rilis; tidak dikompilasi ke CSV).
