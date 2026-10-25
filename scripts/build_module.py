@@ -197,14 +197,19 @@ story.append(Paragraph(
     "<b>1. Revisi itu normal.</b> Total 2024 pertama kali dirilis sebagai 13.902.420, lalu "
     "direvisi BPS menjadi 13.886.678 pada BRS Des 2025. Proyek ini memakai angka revisi "
     "terbaru dan mencatat perubahan itu di SOURCES.md.<br/>"
-    "<b>2. Angka turunan ditandai.</b> Beberapa bulan (mis. Januari 2026) tidak diterbitkan "
-    "sebagai angka tunggal karena BPS sempat hanya merilis data pintu utama. Nilainya "
-    "diperoleh dengan mengurangkan kumulatif resmi antar-rilis, dan selalu ditandai "
-    "sebagai turunan pada kolom catatan CSV.<br/>"
-    "<b>3. Yang tidak terverifikasi dibuang.</b> Wisman bulanan Jan–Okt 2024 serta "
-    "Sep–Okt 2025 tidak dikompilasi karena tidak dapat dipisahkan secara eksak dari "
-    "publikasi yang tersedia. Lebih baik seri berlubang yang jujur daripada seri mulus "
-    "yang mengarang.", BODY))
+    "<b>2. Semua nilai bulanan wisman kini eksak.</b> Pada kompilasi awal, lima bulan "
+    "(Jan &amp; Feb 2025, Mei 2025, Jul 2025, Jan 2026) hanya bisa diperoleh sebagai angka "
+    "turunan — hasil pengurangan antar kumulatif resmi — karena BPS sempat hanya merilis "
+    "data pintu utama. Pada verifikasi 24 Oktober 2026 kelimanya diganti atau dikonfirmasi "
+    "dengan angka eksak dari BRS dan publikasi tahunan BPS; Jan 2025 terkoreksi dari "
+    "1.155.978 menjadi 1.156.012 dan Feb 2025 dari 1.022.928 menjadi 1.022.894 — dua "
+    "koreksi yang saling meniadakan sehingga total tahunan tidak berubah.<br/>"
+    "<b>3. Yang tidak terverifikasi dibuang.</b> Wisman bulanan Jan–Okt 2024 tidak "
+    "dikompilasi karena tidak dapat dipisahkan secara eksak dari publikasi yang tersedia. "
+    "Sep–Okt 2025 yang semula dikecualikan kini sudah dilengkapi dari publikasi tahunan "
+    "BPS 2025 (25 Oktober 2026), sehingga seri bulanan 2025 lengkap 12 bulan dan jumlahnya "
+    "persis sama dengan total tahunan resmi 15.386.646. Lebih baik seri berlubang yang "
+    "jujur daripada seri mulus yang mengarang.", BODY))
 story.append(PageBreak())
 
 # ------------------------------------------------------------------ bab 3
@@ -238,7 +243,7 @@ story.append(Paragraph(
     "belahan bumi utara dan libur sekolah. Bagi pelaku usaha, indeks ini adalah alat "
     "perencanaan paling sederhana: stok, jadwal karyawan, dan promosi mengikuti kurva ini.", BODY))
 story.append(img("04_bulanan_2026_vs_2025.png", 158))
-story.append(Paragraph("Gambar 4.2 — Bulanan 2026 (marine) vs 2025 (abu). Batang 2025 yang hilang (Jan, Feb, Sep, Okt) adalah bulan yang tidak dikompilasi — lihat Bab 2.", CAP))
+story.append(Paragraph("Gambar 4.2 — Bulanan 2026 (marine) vs 2025 (abu). Seri 2025 kini lengkap 12 bulan; seri 2026 baru tersedia sampai Agustus — lihat Bab 2.", CAP))
 story.append(PageBreak())
 
 # ------------------------------------------------------------------ bab 5
