@@ -83,7 +83,25 @@ python scripts/analysis.py       # menghitung findings.json + 14 chart (dengan u
 python scripts/build_powerbi.py  # membangun kit di powerbi/ + tabel verifikasi
 ```
 
+## Visualisasi Utama
+
+![Tren kunjungan wisatawan mancanegara per tahun](charts/01_tren_tahunan.png)
+
+*Tren kunjungan wisatawan mancanegara per tahun*
+
+![Kurva pemulihan kunjungan menuju level 2019](charts/02_kurva_pemulihan.png)
+
+*Kurva pemulihan kunjungan menuju level 2019*
+
+![Kunjungan wisman per pintu masuk utama, 2025](charts/06_pintu_masuk_2025.png)
+
+*Kunjungan wisman per pintu masuk utama, 2025*
+
 ## Dashboard Power BI
+
+![Pratinjau halaman 1 dashboard Power BI](powerbi/dashboard_preview_halaman1.png)
+
+*Pratinjau layout halaman 1 dashboard dari kit di folder `powerbi/`.*
 
 Kit lengkap tersedia di folder [`powerbi/`](powerbi/):
 
